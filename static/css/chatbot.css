@@ -1,0 +1,420 @@
+:root {
+    --primaryColor: #fc0000; /* Blue for trust */
+    --secondaryColor: #0e0d0d; /* Gray for neutrality */
+    --backgroundColor: linear-gradient(135deg, #e4b1c4, #b6e1f4); /* White for clarity */
+    --headerColor: #ec0b0b; /* Green for health */
+    --messageColorOperator: #e7f3ff; /* Light blue for operator messages */
+    --messageColorVisitor: #d4edda; /* Light green for visitor messages */
+    --gradientBackground: linear-gradient(135deg, #e4b1c4, #b6e1f4); /* Custom gradient background */
+}
+
+/* CHATBOX */
+.chatbox {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+/* CONTENT IS CLOSED */
+.chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: var(--gradientBackground); /* Use gradient background */
+    width: 370px;
+    height: 500px;
+    margin-right:  45px;
+    border: 1px solid var(--secondaryColor);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+/* CONTENT IS OPEN */
+.chatbox--active {
+    transform: translateY(-10px);
+    opacity: 1;
+    
+
+}
+
+/* HEADER */
+.chatbox__header {
+    background: var(--headerColor);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures content is centered horizontally */
+    padding: 10px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+.chatbox__image--header {
+    width: 40px; /* Width of the image container */
+    height: 40px; /* Height of the image container */
+    margin-right: 10px; /* Space between image and text */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.chatbox__image--header img {
+    width: 100%; /* Fill the container width */
+    height: 100%; /* Fill the container height */
+    object-fit: cover; /* Ensures the image fits within its container */
+    border-radius: 50%; /* Optional: make the image circular */
+}
+.chatbox__description--header {
+    font-size: 0.9rem;
+    color: white;
+    margin: 0; /* Removes unnecessary margin */
+    text-align: center;
+    display: flex;
+    align-items: right; /* Centers the text vertically */
+    justify-content: right; /* Centers the text horizontally */
+}
+/* MESSAGES */
+.chatbox__messages {
+    margin-top: auto;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column-reverse;
+    padding: 15px;
+    background: var(--backgroundColor); /* Maintain message area clarity */
+}
+
+/* Message Items */
+.messages__item {
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 75%; /* Limit the width of message items for better layout */
+}
+
+/* Operator Message */
+.messages__item--operator {
+    background: var(--messageColorOperator);
+    align-self: flex-end; /* Align operator messages to the right */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Visitor Message */
+.messages__item--visitor {
+    background: var(--messageColorVisitor);
+    align-self: flex-start; /* Align visitor messages to the left */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* FOOTER */
+.chatbox__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: var(--primaryColor);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 5px;
+}
+
+.chatbox__footer input {
+    width: 85%;
+    border: 1px solid var(--secondaryColor);
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.chatbox__footer input:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+.send__button {
+    padding: 5px;
+    background: transparent; /* Remove background color for image visibility */
+    border: none; /* Remove border for a cleaner look */
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+    font-size: 0.9rem;
+    display: flex; /* Align the image properly */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+}
+
+.send__icon {
+    width: 20px; /* Adjust size of the image */
+    height: 20px;
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+.send__button:hover .send__icon {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+.send__button:hover {
+    background: rgba(255, 0, 0, 0.1); /* Subtle background change on hover */
+    border-radius: 50%; /* Rounded shape for the button */
+}
+
+/* CHATBOX BUTTON STYLES */
+.chatbox__button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: all 0.5s ease;
+}
+
+.chatbox__button button {
+    padding: 10px;
+    background: var(--backgroundColor);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease; /* Add smooth hover effect */
+}
+
+/* Move the icon across the screen on hover */
+/* Initial chatbox button styles */
+.chatbox__button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: all 0.5s ease;
+   
+}
+
+.chatbox__button button {
+    padding: 10px;
+    background: var(--backgroundColor);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+/* Keyframe animation to move the button */
+@keyframes moveIcon {
+    0% {
+        transform: translate(0, 0); /* Initial position */
+    }
+    25% {
+        transform: translate(50vw, 0); /* Move to the right */
+    }
+    50% {
+        transform: translate(50vw, 50vh); /* Move diagonally down */
+    }
+    75% {
+        transform: translate(0, 50vh); /* Move to the left */
+    }
+    100% {
+        transform: translate(0, 0); /* Return to original position */
+    }
+}
+.message__time {
+    font-size: 0.8em;
+    color: #888;
+    margin-right: 5px;
+}
+
+/*Chatbot*/
+
+.chatbox__button {
+    display: flex; /* Align buttons in a row */
+    align-items: center; /* Center items vertically */
+}
+
+.toggle-button {
+    background: none; /* Remove default button background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Show pointer on hover */
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Position relative for tooltip positioning */
+    margin-right: 10px; /* Space between buttons */
+    margin-left: 50%;;
+}
+
+.toggle-button img {
+    width: 30px; /* Adjust size of the chatbot icon */
+    height: 30px;
+}
+
+/* Button styling */
+button {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border-radius: 100px; /* Rounded button */
+    background: #cfef00; /* Button background */
+    border: 1px solid transparent; /* Initial border */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    font-size: 15px; /* Font size */
+}
+
+button:hover {
+    background: #c4e201; /* Hover effect */
+}
+
+button > svg {
+    width: 34px; /* Size for SVG icon */
+    margin-left: 10px; /* Space between text and icon */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+button:hover svg {
+    transform: translateX(5px); /* Move icon on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Button press effect */
+}
+
+/* Tooltip styles */
+.chatbox__button {
+    display: flex; /* Align buttons in a row */
+    align-items: center; /* Center items vertically */
+}
+
+.toggle-button {
+    background: white; /* Remove default button background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Show pointer on hover */
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Position relative for tooltip positioning */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.toggle-button img {
+    width: 45px; /* Adjust size of the chatbot icon */
+    height: 45px;
+    background-color: #ffffff;  
+    border-radius: 100%;
+}
+
+/* Button styling */
+button {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border-radius: 100px; /* Rounded button */
+    background: #cfef00; /* Button background */
+    border: 1px solid transparent; /* Initial border */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    font-size: 15px; /* Font size */
+}
+
+button:hover {
+    background: #c4e201; /* Hover effect */
+}
+
+.tooltip {
+    visibility: hidden; /* Hide by default */
+    width: 120px; /* Width of the tooltip */
+    background-color: #555; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the text */
+    position: absolute; /* Position relative to button */
+    top: 50%; /* Center vertically */
+    right: 105%; /* Position to the right of the button */
+    transform: translateY(-50%); /* Center tooltip vertically */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s; /* Fade effect */
+}
+
+.toggle-button:hover .tooltip {
+    visibility: visible; /* Show tooltip */
+    opacity: 1; /* Make it visible */
+}
+
+.close-button {
+    background-color: red; /* Background color for close button */
+    color: rgb(243, 13, 13); /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Show pointer on hover */
+    padding: 5px 10px; /* Padding around the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    margin-left: 25px; /* Space between toggle button and close button */
+    display: none; /* Hidden by default */
+    margin-bottom:520px
+}
+
+/* Close button hover effect */
+.close-button:hover {
+    background-color: darkred; /* Darker background on hover */
+    border: 5px solid black;
+}
+
+
+/*Chatbot*/
+
+.button-group {
+    display: flex; /* Use flexbox for layout */
+    justify-content: right; /* Center buttons horizontally */
+}
+
+.button {
+    padding: 4px 6px; /* Smaller padding for smaller buttons */
+    margin: 2.5px; /* Margin around buttons */
+    background-color: white; /* Set background color to white */
+    color: #ec1a0b; /* Change text color to match your design */
+    text-decoration: none; /* Remove text decoration */
+    border: 2px dashed #0b0c0c; /* Dashed border with color */
+    border-radius: 25%; /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    min-width: 60px; /* Set a minimum width for buttons */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; 
+}
+
+.button:hover {
+    background-color: #f8f9fa; /* Light background color on hover */
+    border-color: #0c0c0c; /* Change border color on hover */
+}
+/* Styles for the user message to align it to the right */
+.messages__item--operator {
+    display: flex;
+    justify-content: flex-end; /* Align the message to the right */
+    margin-left: auto; /* Ensure the message stays on the right */
+    margin-bottom: 10px;
+    max-width: 70%;
+    background-color: #dcf8c6; /* Light green background for user's messages */
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+/* Styles for bot's messages aligned to the left */
+.messages__item--visitor {
+    display: flex;
+    justify-content: flex-start; /* Align the message to the left */
+    margin-right: auto;
+    margin-bottom: 10px;
+    max-width: 70%;
+    background-color: #f1f1f1; /* Light grey background for bot's messages */
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+/* Additional styling for the chatbox message time */
+.message__time {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+}
