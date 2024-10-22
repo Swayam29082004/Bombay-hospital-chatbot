@@ -36,17 +36,25 @@ Welcome to the **Bombay Hospital Bot** project! This is a Flask-based web applic
 
 ```bash
 📦 Bombay-Hospital-Bot/
-├── app.py                     # Main Flask application
-├── templates/
-│   ├── index.html              # Homepage template
-│   ├── aboutUs.html            # About page
-│   ├── contact.html            # Contact page
-├── static/
-│   ├── js/
-│   │   └── app.js              # Chatbox and conversation logic
-├── MasterData/
-│   ├── Symptom_severity.csv    # CSV file for symptom severity
-│   └── symptom_precaution.csv  # CSV file for symptom precautions
+Bombay-Hospital-Chatbot
+┣ 📂MasterData
+┃ ┣ 📜Symptom_severity.csv
+┃ ┗ 📜symptom_precaution.csv
+┣ 📂static
+┃ ┣ 📂css
+┃ ┃ ┣ 📜chatbot.css
+┃ ┃ ┗ 📜style.css
+┃ ┣ 📂iMG
+┃ ┣ 📂js
+┃ ┃ ┣ 📜chatbot.js
+┃ ┃ ┗ 📜main.js
+┣ 📂templates
+┃ ┣ 📜aboutUs.html
+┃ ┣ 📜contact.html
+┃ ┗ 📜index.html
+┣ 📜app.py
+┗ 📜README.md
+
 ```
 
 ## Setup and Installation 🚀
