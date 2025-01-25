@@ -1,4 +1,3 @@
-Based on the content of your project, here’s a suggested GitHub README file in markdown format:
 
 ```markdown
 # Bombay Hospital Bot 🤖
