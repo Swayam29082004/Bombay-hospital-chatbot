@@ -1,6 +1,6 @@
 
 ```markdown
-# Bombay Hospital Bot 🤖
+## Bombay Hospital Bot 🤖
 
 Welcome to the **Bombay Hospital Bot** project! This is a Flask-based web application that simulates a conversational chatbot aimed at guiding users through a basic medical diagnostic process. It asks the user for their name, symptoms, and how long they've been experiencing them, then provides relevant precautions and offers doctor suggestions. This bot also enables users to book appointments with suggested doctors based on their symptoms.
 
